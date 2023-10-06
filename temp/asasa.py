@@ -1,22 +1,14 @@
-import requests
+# import ast
 
-client_id = '30ff7f70bc4036d'  # Replace with your Imgur client ID
+# result_St = "['dsd', 'Dsdsd']"
 
-# Endpoint for image upload
-url = 'https://api.imgur.com/3/image'
+# aa = ast.literal_eval(result_St)
 
-headers = {
-    'Authorization': f'Client-ID {client_id}'
-}
+# print(aa)
 
-with open('static/images/bg_1.jpg', 'rb') as f:
-    files = {'image': ('static/images/bg_1.jpg', f)}
-    response = requests.post(url, headers=headers, files=files)
+# SELECT * FROM `events` where interest LIKE '%Old age home%' or interest LIKE '%Cleaning%'; 
+a =  [(1, 'sixyjofere@mailinator.com', '2006-10-24', 'virinoqoka@mailinator.com', '06:16', 'Sibsagar', 'zyrohakiv@mailinator.com', 'In elit consequat ', '[]', 'gc@gmail.com'), (2, 'waxexovaro@mailinator.com', '2010-07-05', 'nahy@mailinator.com', '17:03', 'Deoria', 'munig@mailinator.com', 'Recusandae Quia pro', "['Cooking', 'Food Distribution']", 'gc@gmail.com')] 
 
-if response.status_code == 200:
-    # Image uploaded successfully
-    imgur_data = response.json()
-    print("Image uploaded. Imgur URL:", imgur_data['data']['link'])
-else:
-    print("Image upload failed. Status code:", response.status_code)
-    print(response.text)
+
+for i in a:
+    print(i[0])
