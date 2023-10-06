@@ -1,14 +1,24 @@
 from flask import Flask,render_template,request,redirect
 import mysql.connector
 import os
+import hashlib
 from imgurpython import ImgurClient
 import requests
 import glob
+import json
 
 
 app = Flask(__name__)
 
+def compute_sha256_hash(data):
 
+    sha256_hash = hashlib.sha256()
+    if isinstance(data, str):
+        data = data.encode('utf-8')
+
+    sha256_hash.update(data)
+    hash_value = sha256_hash.hexdigest()
+    return hash_value
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -25,12 +35,7 @@ def signup():
 def api(slog):
     if request.method=="POST":
         if slog=="signup-user":
-            file_pattern = 'static/temp_images/*'
-            file_list = glob.glob(file_pattern)
-            for file_path in file_list:
-                os.remove(file_path)
-            temp_files = []
-
+   
             name = request.form.get('name')
             username = request.form.get('username')
             email = request.form.get('email')
@@ -38,47 +43,82 @@ def api(slog):
             email = request.form.get('email')
             city = request.form.get('city')
             password = request.form.get('password')
-            profile = request.files.getlist('files')
-            imgur_urls = []
-
-            client_id = '30ff7f70bc4036d'  # Replace with your Imgur client ID
-            url = 'https://api.imgur.com/3/image'
-            headers = {
-                'Authorization': f'Client-ID {client_id}'
-            }
-
-            # Create an empty list to store the Imgur URLs
-            imgur_urls = []
-
-            # Loop through the uploaded files in 'profile'
-            for file in request.files.getlist('files'):
-                with open(file.filename, 'rb') as f:
-                    files = {'image': (file.filename, f)}
-                    response = requests.post(url, headers=headers, files=files)
-
-                if response.status_code == 200:
-                    # Image uploaded successfully
-                    imgur_data = response.json()
-                    imgur_url = imgur_data['data']['link']
-                    imgur_urls.append(imgur_url)
-                    print("Image uploaded. Imgur URL:", imgur_url)
-                else:
-                    print("Image upload failed. Status code:", response.status_code)
-                    print(response.text)
-
-            # Now imgur_urls contains the list of Imgur URLs for the uploaded images
-            actual_url = ''
-            for i in imgur_urls:
-                actual_url = actual_url + i
+            hash_pas= compute_sha256_hash(password)
 
             dataBase  = mysql.connector.connect(host="localhost", user="root", password="", database="betterworld")
             cursorObject  = dataBase.cursor()
-            data = (name,username,email,phone,city,actual_url,password)
-            cursorObject.execute("INSERT INTO user (name, user_name, email, phone, city, profile_photo, password) VALUES (%s, %s, %s, %s, %s, %s, %s)",data)
+            data = (name,username,email,phone,city,hash_pas)
+            cursorObject.execute("INSERT INTO user (name, user_name, email, phone, city, password) VALUES (%s, %s, %s, %s, %s, %s)",data)
             dataBase.commit()
-            return 'Data successfully processed'  # Add a response for POST requests
+            return redirect('/login')  # Add a response for POST requests
+        elif slog =="sign_organization":
+                name = request.form.get('name')
+                email = request.form.get('email')
+                phone = request.form.get('phone')
+                address = request.form.get('address')
+                iso = request.form.get('iso')
+                password = request.form.get('password')
+                about = request.form.get('about')
+                hash_pas= compute_sha256_hash(password)
+
+                print(about,about)
+                dataBase  = mysql.connector.connect(host="localhost", user="root", password="", database="betterworld")
+                cursorObject  = dataBase.cursor()
+                data = (name,email,phone,address,hash_pas,iso,about)
+                cursorObject.execute("INSERT INTO organization (name, email, phone, address, password, iso,about) VALUES (%s, %s, %s, %s, %s, %s,%s)",data)
+                dataBase.commit()
+                return 'Wait until admin approves your application'  # Add a response for POST requests
+        
+        elif slog == "user-login":
+            email = request.form.get('email')
+            password = request.form.get('password')
+            dataBase = mysql.connector.connect(host="localhost", user="root", password="", database="betterworld")
+            cursorObject = dataBase.cursor()
+            cursorObject.execute("select email, password from user")
+            result = cursorObject.fetchall()
+            hash_pas= compute_sha256_hash(password)
+            status = False
+
+            for x in result:
+                if x[0] == email and x[1] == hash_pas:
+                    status = True
+                    break
+            if status:
+                return redirect('/')
+            else:
+                return "Wrong Password"
+            
+        elif slog == "organization-login":
+            email = request.form.get('email')
+            password = request.form.get('password')
+            dataBase = mysql.connector.connect(host="localhost", user="root", password="", database="betterworld")
+            cursorObject = dataBase.cursor()
+            cursorObject.execute("select email, password from organization")
+            result = cursorObject.fetchall()
+            hash_pas= compute_sha256_hash(password)
+            status = False
+
+            for x in result:
+                if x[0] == email and x[1] == hash_pas:
+                    status = True
+                    break
+            if status:
+                data = (email,)
+                cursorObject.execute("select admin from organization where email=%s",data)
+                result = cursorObject.fetchall()
+                if result[0][0] == 0:
+                    return 'Wait until admin approves your application'  # Add a response for POST requests
+                else:
+                    return redirect('/')      
+            else:
+                return "Wrong Password"
+        else:
+            return 'Direct Access To API is not allowed'
+
     else:
         return 'Direct Access To API is not allowed'
+
+
 
 
 

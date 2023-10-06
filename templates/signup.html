@@ -176,8 +176,8 @@ form a {
         </div>
         <div id="slider">
           <div class="login-signup">
-            <form id="signup-form" action="/api/signup-user" method="post" >
-              <h2>Sign-Up As User</h2>
+            <form action="/api/signup-user" method="POST" enctype="multipart/form-data">
+                            <h2>Sign-Up As User</h2>
               <input type="text" placeholder="Name" name="name" required>
               <input type="text" placeholder="Username" name="username" required>
 
@@ -189,38 +189,21 @@ form a {
 
 <input type="password" placeholder="Password" name="password"  required>
 
-<input type="file" src="Upload" alt="" enctype="multipart/form-data" name="files" required>
 
 
               <button type="submit">Sign-Up</button>
             </form>
-            <form id="login-form" action="/sign_organization" method="post"  enctype="multipart/form-data">
+            <form id="login-form" action="api/sign_organization" method="post">
               <h2>SignUp Organization</h2>
         <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
         <input type="text" placeholder="Name of Organization" name="name" required>
         <input type="email" placeholder="Email" name="email" required>
         <input type="tel" placeholder="Phone" name="phone" required>
         <input type="text" placeholder="Address" name="address" required>
-        <input type="text" placeholder="ISO-Number" name="address" required>
-        <input type="file" placeholder="Upload Logo" name="Logo" required>
+        <input type="text" placeholder="ISO-Number" name="iso" required>
         
-        <!--     
-        <input type="file" style="box-shadow: 0px 10px 14px -7px #3e7327;
-        background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-        background-color:#77b55a;
-        border-radius:4px;
-        border:1px solid #4b8f29;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:13px;
-        font-weight:bold;
-        padding:6px 12px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #5b8a3c;" name="file"> -->
         <input type="password" placeholder="Password" name="password">
-        <textarea name="" id="" placeholder="About Organization" cols="30" rows="3"></textarea>
+        <textarea placeholder="About Organization" name="about" cols="30" rows="3"></textarea>
 
        <div>
                 <button type="submit">Sign-Up</button>
