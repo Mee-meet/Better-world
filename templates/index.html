@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BetterWorld</title>
+    <title>Better World</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -40,14 +40,12 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="causes.html" class="nav-link">Causes</a></li>
-          <!-- <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li> -->
-          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+          <li class="nav-item active"><a href="{{url_for('home')}}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{url_for('about')}}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{{url_for('causes')}}" class="nav-link">Causes</a></li>
           <!-- <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li> -->
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item"><a href="event.html" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="{{url_for('contact')}}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{{url_for('event')}}" class="nav-link">Event</a></li>
         </ul>
       </div>
     </div>
@@ -59,8 +57,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1>
-            <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">Colorlib.com</a></p>
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Building a Better World, One Click at a Time</h1>
+            <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"></p>
 
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p>
           </div>
@@ -75,7 +73,7 @@
             <div class="block-18 color-1 align-items-stretch">
               <div class="text">
               	<span>Served Over</span>
-                <strong class="number" data-number="1432805">0</strong>
+                <strong class="number" data-number="1432845">0</strong>
                 <span>Children in 190 countries in the world</span>
               </div>
             </div>
@@ -84,7 +82,7 @@
             <div class="block-18 color-2 align-items-stretch">
               <div class="text">
               	<h3 class="mb-4">Donate Money</h3>
-              	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
+              	<p>Join Us in Making a Difference - Your Donation Matters.</p>
               	<p><a href="#" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
@@ -93,7 +91,7 @@
             <div class="block-18 color-3 align-items-stretch">
               <div class="text">
               	<h3 class="mb-4">Be a Volunteer</h3>
-              	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
+              	<p>Empower Change, Be a Volunteer</p>
               	<p><a href="#" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
               </div>
             </div>
@@ -110,7 +108,7 @@
               <div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
               <div class="media-body pl-4">
                 <h3 class="heading">Make Donation</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Make a Difference Today - Your Donation Can Change Lives</p>
               </div>
             </div>      
           </div>
@@ -119,7 +117,7 @@
               <div class="icon d-flex mb-3"><span class="flaticon-charity"></span></div>
               <div class="media-body pl-4">
                 <h3 class="heading">Become A Volunteer</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Unleash Your Potential, Ignite Change: Volunteer for a Better World</p>
               </div>
             </div>      
           </div>
@@ -128,7 +126,7 @@
               <div class="icon d-flex mb-3"><span class="flaticon-donation"></span></div>
               <div class="media-body pl-4">
                 <h3 class="heading">Sponsorship</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Empowering Dreams, One Sponsorship at a Time</p>
               </div>
             </div>    
           </div>
@@ -136,162 +134,165 @@
     	</div>
     </section>
 
-
     <section class="ftco-section bg-light">
-    	<div class="container-fluid">
-    		<div class="row justify-content-center mb-5 pb-3">
+      <div class="container-fluid">
+        <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-5 heading-section ftco-animate text-center">
             <h2 class="mb-4">Our Causes</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-    		<div class="row">
-    			<div class="col-md-12 ftco-animate">
-    				<div class="carousel-cause owl-carousel">
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(static/images/cause-1.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(static/images/cause-2.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(static/images/cause-3.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(static/images/cause-4.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(static/images/cause-5.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url(images/cause-6.jpg);"></a>
-		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-    <section class="ftco-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Latest Donations</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>Utilising funds raised through donations, we work in many aspects.</p>
           </div>
         </div>
         <div class="row">
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(static/images/person_1.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
-        					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(static/images/person_2.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
-        					<div class="text">
-		        				<p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
-        		<div class="staff">
-        			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(static/images/person_3.jpg);"></div>
-        				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
-        					<div class="text">
-		        				<p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
-		        			</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
+          <div class="col-md-12 ftco-animate">
+            <div class="carousel-cause owl-carousel">
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/educationproblem.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">CHILD RIGHTS</a></h3>
+                    <p>Nurturing the potential of every child and working to restore every child's right to childhood.</p>
+                    <br>
+                    <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.15,280 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/poverty.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">POVERTY</a></h3>
+                    <p>poverty is not lack of resources , it is lack of opportunities and freedom.Invest in economic development. </p>
+                    <span class="donation-time mb-3 d-block">Last donation 2hr. ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 87%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.27,890 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/cause-3.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">SANITATION AND HYGINE</a></h3>
+                    <p>Improve live of children providing access to clean toilets and educating girls with sanitation and hygine.</p>
+                    <br>
+                    <span class="donation-time mb-3 d-block">Last donation few mins. ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 78%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.21,980 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/cause-6.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">LITERACY AND EDUCATION</a></h3>
+                    <p>promoting literacy and empowering individuals rights for education along with use of technology.</p>
+                  
+                    <span class="donation-time mb-3 d-block">Last donation 3 days ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 74%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.25,570 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/pollution.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">ENVIRONMENT CONSERVATION</a></h3>
+                    <p>focused on conserving the worlds biodiversity and wildlife habitats.</p>
+                    <br>
+                    <span class="donation-time mb-3 d-block">Last donation 1W ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.12,000 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="cause-entry">
+                  <a href="#" class="img" style="background-image: url(static/images/lackofmedical.jpg);"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3><a href="#">MEDICAL AID & FACILITIES</a></h3>
+                    <p>A humanitarian organization providing medication to people affected by disasters or poverty.</p>
+                    <span class="donation-time mb-3 d-block">Last donation 2w ago</span>
+                    <div class="progress custom-progress-success">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="fund-raised d-block">Rs.15,000 raised of Rs.30,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Latest Donations</h2>
+            <p>Every donation counts and brings us closer to a better tomorrow causing a betterworld.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+            <div class="staff">
+              <div class="d-flex mb-4">
+                <div class="img" style="background-image: url(static/images/person_1.jpg);"></div>
+                <div class="info ml-4">
+                  <h3><a href="teacher-single.html">Ratan Tata</a></h3>
+                  <span class="position">Donated </span>
+                  <div class="text">
+                    <p>Donated <span>RS.1,00,000</span> for <a href="#">Children Needs Food</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+            <div class="staff">
+              <div class="d-flex mb-4">
+                <div class="img" style="background-image: url(static/images/person_2.jpg);"></div>
+                <div class="info ml-4">
+                  <h3><a href="teacher-single.html">Rohini nilekani</a></h3>
+                  <span class="position">Donated</span>
+                  <div class="text">
+                    <p>Donated <span>RS.70,000</span> for <a href="#">prerana women safety</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+            <div class="staff">
+              <div class="d-flex mb-4">
+                <div class="img" style="background-image: url(static/images/person_3.jpg);"></div>
+                <div class="info ml-4">
+                  <h3><a href="teacher-single.html">Shiv Nadar</a></h3>
+                  <span class="position">Donated </span>
+                  <div class="text">
+                    <p>Donated <span>RS.90,000</span> for <a href="#">Yuva health foundation</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
     <section class="ftco-gallery">
     	<div class="d-md-flex">
@@ -340,64 +341,6 @@
 	    </div>
     </section>
 
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_1.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_2.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_3.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -406,53 +349,56 @@
           </div>
         </div>
         <div class="row">
-        	<div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry align-self-stretch">
               <a href="blog-single.html" class="block-20" style="background-image: url('static/images/event-1.jpg');">
               </a>
               <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
+                <div class="meta mb-3">
+                  <div><a href="#">Feb. 10, 2023</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>
-                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mb-4"><a href="#">Walk For Tiger</a></h3>
+                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i>08:00AM-01:00PM</span></p>
+                   <p class="time-loc"><span><i class="icon-map-o"></i> Venue: sanjay gandhi park,400066</span></p>
+                <p>NGO of WWW India's work for tiger consevation aims to maintain and restore tiger habitats.</p>
                 <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
+            <div class="blog-entry align-self-stretch">
               <a href="blog-single.html" class="block-20" style="background-image: url('static/images/event-2.jpg');">
               </a>
               <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
+                <div class="meta mb-3">
+                  <div><a href="#">Feb. 11, 2023</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>
-                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mb-4"><a href="#">Myna mahila foundation</a></h3>
+                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 01:30PM-03:30PM</span></p>
+                  <p class="time-loc"><span><i class="icon-map-o"></i> Venue:DN nagar Andheri(east) 400069</span></p>
+                <p>Employement for women to manufacture sanitary pads.sell and educate girls from mumbai slums's.</p>
                 <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>
               </div>
             </div>
           </div>
           <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
+            <div class="blog-entry align-self-stretch">
               <a href="blog-single.html" class="block-20" style="background-image: url('static/images/event-3.jpg');">
               </a>
               <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sep. 10, 2018</a></div>
+                <div class="meta mb-3">
+                  <div><a href="#">feb. 13, 2023</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>
-                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mb-4"><a href="#">Smile foundation</a></h3>
+                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> </p>
+                   <p class="time-loc"><span><i class="icon-map-o"></i> Venue:parle tilak vidyalaya 400057</span></p>
+                <p>Be the reason Every child goes to school.Teaching children's basic skills and providing them nutritious food.</p>
                 <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>
               </div>
             </div>
@@ -460,7 +406,9 @@
         </div>
       </div>
     </section>
-		
+
+ 
+    
 		<section class="ftco-section-3 img" style="background-image: url(static/images/bg_3.jpg);">
     	<div class="overlay"></div>
     	<div class="container">
@@ -488,7 +436,6 @@
     		</div>
     	</div>
     </section>
-
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
@@ -496,7 +443,7 @@
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Better World is an platform where passionate volunteer gets a direction or roadmap for helping the world to make a better place.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -504,72 +451,38 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(static/images/image_1.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(static/images/image_2.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Site Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Donate</a></li>
-                <li><a href="#" class="py-2 d-block">Causes</a></li>
-                <li><a href="#" class="py-2 d-block">Event</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
+    <div class="col-md-2">
+      <div class="ftco-footer-widget mb-4 ml-md-4">
+       <h2 class="ftco-heading-2">Site Links</h2>
+       <ul class="list-unstyled">
+         <li><a href="#" class="py-2 d-block">Home</a></li>
+         <li><a href="#" class="py-2 d-block">About</a></li>
+         <li><a href="#" class="py-2 d-block">Donate</a></li>
+         <li><a href="#" class="py-2 d-block">Causes</a></li>
+         <li><a href="#" class="py-2 d-block">Event</a></li>
+       </ul>
+     </div>
+   </div>
+   <div class="col-md-3">
+     <div class="ftco-footer-widget mb-4">
+       <h2 class="ftco-heading-2">Have a Questions?</h2>
+       <div class="block-23 mb-3">
+         <ul>
+           <li><span class="icon icon-map-marker"></span><span class="text">SVKM Bhagubhai Mafatlal Polytechnic, Vile Parle(W),Mumbai- 400104.</span></li>
+           <li><a href="#"><span class="icon icon-phone"></span><span class="text">9835783439</span></a></li>
+           <li><a href="#"><span class="icon icon-envelope"></span><span class="text">assistbetterworld@gmail.com</span></a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-12 text-center">
+   </div>
+ </div>
+</div>
+  </footer>
   
-
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
