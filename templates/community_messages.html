@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Better World</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/animate.css">
+    
+    <link rel="stylesheet" href="../../../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../../../static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../../../static/css/aos.css">
+
+    <link rel="stylesheet" href="../../../static/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="../../../static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../../../static/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="../../../static/css/flaticon.css">
+    <link rel="stylesheet" href="../../../static/css/flaticon.css">
+
+    <link rel="stylesheet" href="../../../static/css/icomoon.css">
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <script>
+   
+   
+   var currentURL = window.location.href;
+
+// Log it into the console
+console.log("Current URL: " + currentURL);
+// document.getElementById('current_url').innerText = currentURL;
+document.getElementById('current_url').value = currentURL; // Set the current URL
+document.addEventListener("DOMContentLoaded", function() {
+    const copyButton = document.getElementById("copyButton");
+    const notification = document.getElementById("notification");
+    const textToCopy = "This is the text you want to copy.";
+
+    copyButton.addEventListener("click", function() {
+        // Create a temporary text area for clipboard interaction.
+        const textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+
+        // Use the Clipboard API to copy the text to the clipboard.
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    // Text successfully copied to clipboard.
+                    notification.textContent = "Text copied to clipboard!";
+                })
+                .catch(function(err) {
+                    // Handle any errors that may occur during clipboard access.
+                    console.error("Unable to copy text: ", err);
+                })
+                .finally(function() {
+                    // Remove the temporary text area.
+                    document.body.removeChild(textArea);
+
+                    // Clear the notification after a few seconds (e.g., 3 seconds).
+                    setTimeout(function() {
+                        notification.textContent = "";
+                    }, 3000);
+                });
+        } else {
+            // Fallback for browsers that do not support the Clipboard API.
+            // You can add your custom handling here.
+            console.error("Clipboard API not supported.");
+        }
+    });
+});
+
+    </script>
+<style>
+         table, th, td {
+border:2px solid black;
+}
+td,th{
+  padding: 10px;
+}
+
+    /* Chat container */
+.chat-container {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat messages */
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Individual chat message */
+.message {
+    margin-bottom: 10px;
+}
+
+/* Chat input */
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+/* Message input field */
+#message-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Send button */
+#send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+</style>  
+
+</head>
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">BetterWorld</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Causes</a></li>
+          <!-- <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li> -->
+          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+          <!-- <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+          <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Event</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!-- END nav -->
+    
+    
+    <div class="hero-wrap" style="background-image: url('../../../static/images/poorpeopledonation.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>CHAT</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Community Chat {{name_of_community[0]}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container m-5 f-flex justify-content-end" onclick="copytoclip()">
+   <button type="button" id="copyButton" class="btn btn-primary" data-toggle="modal"  onclick="copytoclip()">Click On This To Invite User</button>
+
+<!-- Button to trigger the modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCommunityModal">Users In Community</button>
+
+
+{% if is_admin == "True" and count_members>=1000 %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createCommunityModal1">File A Petition</button>
+{% endif %}
+<!-- Modal -->
+<div class="modal fade" id="createCommunityModal1" tabindex="-1" role="dialog" aria-labelledby="createCommunityModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createCommunityModalLabel">File A Petition</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="modal-body" method="post" action="/api/petition_detail_community">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
+
+            <label for="exampleInputEmail1" class="form-label">Cause</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title2">
+           
+            
+            <label for="exampleInputEmail1" class="form-label">Last Date</label>
+            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="date">
+
+            <label for="exampleInputEmail1" class="form-label">Description</label>
+            <textarea  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="description">
+        </textarea>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- You can add additional buttons or actions here if needed -->
+    </form>
+      </div>  
+
+
+
+    </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="createCommunityModal" tabindex="-1" role="dialog" aria-labelledby="createCommunityModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createCommunityModalLabel">Users In Community</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+   
+ {% for i in members %}
+        <div class="alert alert-primary" role="alert">
+                {{i[2]}}
+        </div>
+        {% endfor %}
+          
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- You can add additional buttons or actions here if needed -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+</div>
+
+
+
+
+       <div class="container">
+        <!-- Chat container -->
+        <div class="chat-container" style="overflow-y: scroll;">
+            <div class="chat m-2">
+                {% for i in messages %}
+                <div class="chat-messages">
+                    {{i[3]}}
+                </div>
+                {% endfor %}
+                <div class="chat-input">
+
+                    <form  method="get" action="/api/add_chat" >
+                {% if is_admin == "True"%}
+                    <input type="text" name="chat" id="message-input" placeholder="Type your message">
+                {% else %}
+                <input type="text" name="chat" id="message-input" placeholder="Type your message" disabled>
+                {% endif %}
+                    <input type="hidden" name="community_name"  id="community_name">
+<input type="hidden" name="community_email"  id="community_email">
+<input type="hidden" name="current_url"  id="current_url">
+<script>
+    console.log("Current URL: " + currentURL);
+// document.getElementById('current_url').innerText = currentURL;
+document.getElementById('current_url').value = currentURL; // Set the current URL
+
+</script>
+{% if is_admin == "True"%}
+            <button id="send-button" type="submit">Send</button>
+{% else %} 
+            <button id="send-button" type="submit" disabled>Send</button>
+{% endif %}
+                </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+       
+
+
+
+
+
+
+
+
+
+<center> <h1 style="padding-top: 50px;">All Petition</h1></center>
+</div>
+
+<br>
+<br>
+
+<br>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Edit Profile</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    
+   </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        Hide this modal and show the first with the button below.
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+{% if is_admin == "True" and count_members>=1000 %}
+
+<div class="container">
+
+    <table id="example5" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Cause</th>
+                <th>Description</th>
+                <th>Last Date</th>
+        {% if is_admin =="True" %}
+          
+                <th>Delete</th>
+          {% endif %}
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in petition %}
+            
+            <tr>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[5]}}</td>
+        {% if is_admin == "True" %}
+                <td><a href="/api/community_petition_delete?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Delete</button></a></td>
+        {% endif %}
+            </tr>
+{% endfor %} 
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+ 
+    {% else %}
+<div class="container">
+<center> <h5>You Need Minimum 1000 Volunteer To Create A Petition</h5></center>
+    
+    </div>
+        {% endif %}
+
+</div>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="../../../static/js/jquery.min.js"></script>
+  <script src="../../../static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../../../static/js/popper.min.js"></script>
+  <script src="../../../static/js/bootstrap.min.js"></script>
+  <script src="../../../static/js/jquery.easing.1.3.js"></script>
+  <script src="../../../static/js/jquery.waypoints.min.js"></script>
+  <script src="../../../static/js/jquery.stellar.min.js"></script>
+  <script src="../../../static/js/owl.carousel.min.js"></script>
+  <script src="../../../static/js/jquery.magnific-popup.min.js"></script>
+  <script src="../../../static/js/aos.js"></script>
+  <script src="../../../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../../../static/js/bootstrap-datepicker.js"></script>
+  <script src="../../../static/js/jquery.timepicker.min.js"></script>
+  <script src="../../../static/js/scrollax.min.js"></script>
+  <script src="../../../static/js/google-map.js"></script>
+  <script src="../../../static/js/main.js"></script>
+    
+    
+
+
+  <script>
+       function copytoclip(){
+        let url = document.location.href
+
+navigator.clipboard.writeText(url + '?invite=True&url=' + url).then(function() {
+    console.log('Copied!');
+}, function() {
+    console.log('Copy error')
+});
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function() {
+    $('#example').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+
+    // Initialize the second table with a different id
+    $('#example2').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+    $('#example3').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+
+    $('#example5').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+});
+
+
+
+
+  </script>
+<br>
+
+</div>
+
+
+<footer class="ftco-footer ftco-section img">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">About Us</h2>
+          <p>Better World is an platform where passionate volunteer gets a direction or roadmap for helping the world to make a better place.</p>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+      </div>
+<div class="col-md-2">
+  <div class="ftco-footer-widget mb-4 ml-md-4">
+   <h2 class="ftco-heading-2">Site Links</h2>
+   <ul class="list-unstyled">
+     <li><a href="#" class="py-2 d-block">Home</a></li>
+     <li><a href="#" class="py-2 d-block">About</a></li>
+     <li><a href="#" class="py-2 d-block">Donate</a></li>
+     <li><a href="#" class="py-2 d-block">Causes</a></li>
+     <li><a href="#" class="py-2 d-block">Event</a></li>
+   </ul>
+ </div>
+</div>
+<div class="col-md-3">
+ <div class="ftco-footer-widget mb-4">
+   <h2 class="ftco-heading-2">Have a Questions?</h2>
+   <div class="block-23 mb-3">
+     <ul>
+       <li><span class="icon icon-map-marker"></span><span class="text">SVKM Bhagubhai Mafatlal Polytechnic, Vile Parle(W),Mumbai- 400104.</span></li>
+       <li><a href="#"><span class="icon icon-phone"></span><span class="text">9835783439</span></a></li>
+       <li><a href="#"><span class="icon icon-envelope"></span><span class="text">assistbetterworld@gmail.com</span></a></li>
+     </ul>
+   </div>
+ </div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 text-center">
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/jquery.easing.1.3.js"></script>
+<script src="static/js/jquery.waypoints.min.js"></script>
+<script src="static/js/jquery.stellar.min.js"></script>
+<script src="static/js/owl.carousel.min.js"></script>
+<script src="static/js/jquery.magnific-popup.min.js"></script>
+<script src="static/js/aos.js"></script>
+<script src="static/js/jquery.animateNumber.min.js"></script>
+<script src="static/js/bootstrap-datepicker.js"></script>
+<script src="static/js/jquery.timepicker.min.js"></script>
+<script src="static/js/scrollax.min.js"></script>
+<script src="static/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="static/js/google-map.js"></script>
+<script src="static/js/main.js"></script>
+
+</body>
+</html>
+</html>

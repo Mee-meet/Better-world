@@ -1,1 +1,1 @@
-email
+event_detail

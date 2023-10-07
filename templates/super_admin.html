@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome Super Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+<!-- jQuery (required) -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        table, th, td {
+border:1px solid black;
+}
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 8px;
+        }
+
+        .checkbox-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    #customers {
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+#customers td, #customers th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #04AA6D;
+color: white;
+}
+    </style>
+
+</head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">BetterWorld</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/logout">Log-Out</a>
+            </li>
+            </li>
+            </ul>
+        
+        </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://source.unsplash.com/2400x700/?nature,water" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://source.unsplash.com/2400x700/?nature,pollution" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://source.unsplash.com/2400x700/?nature,plastic" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+<center> <h1 style="padding-top: 50px;">Organization</h1></center>
+</div>
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Edit Profile</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    
+
+<!-- my update code in text file -->
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        Hide this modal and show the first with the button below.
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+    <table id="example" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>ISO</th>
+                <th>About</th>
+                <th>Approve</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in event_data %}
+            
+            <tr>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[6]}}</td>
+                <td>{{i[7]}}</td>
+                <td> {% if i[9]== 0 %}
+                    <a href="/api/org_update?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Update</button></a>
+                    {% endif %}
+                </td>
+                <td><a href="/api/org_delete?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Delete</button></a></td>
+
+            </tr>
+    {% endfor %} 
+
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+
+
+</div>
+
+
+
+
+
+<center> <h1 style="padding-top: 50px;">Community</h1></center>
+</div>
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Edit Profile</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+
+
+<!-- my update code in text file -->
+
+
+
+
+
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    Hide this modal and show the first with the button below.
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+<table id="example2" class="display">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Motive</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in community %}
+        
+        <tr>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            
+            <td><a href="/api/community_delete?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Delete</button></a></td>
+
+        </tr>
+{% endfor %} 
+
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+
+
+</div>
+
+
+
+<center> <h1 style="padding-top: 50px;">User</h1></center>
+</div>
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Edit Profile</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+
+
+<!-- my update code in text file -->
+
+
+
+
+
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    Hide this modal and show the first with the button below.
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+<table id="example3" class="display">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in event_data2 %}
+        
+        <tr>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td><a href="/api/user_delete?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Delete</button></a></td>
+
+        </tr>
+{% endfor %} 
+
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center> <h1 style="padding-top: 50px;">All Petition</h1></center>
+</div>
+
+<br>
+<br>
+
+<br>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Edit Profile</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    
+   </div>
+    <div class="modal-footer">
+    </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        Hide this modal and show the first with the button below.
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+    <table id="example5" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Cause</th>
+                <th>Description</th>
+                <th>Last Date</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in petition %}
+            
+            <tr>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[5]}}</td>
+               <td><a href="/api/super_admin_petition_delete?event={{i[0]}}"> <button type="button" value="{{i[0]}}" id="{{i[0]}}">Delete</button></a></td>
+
+            </tr>
+{% endfor %} 
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+$(document).ready(function() {
+    $('#example').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+
+    // Initialize the second table with a different id
+    $('#example2').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+    $('#example3').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+
+    $('#example5').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true
+    });
+});
+
+
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    
+</body>
+
+
+</html>

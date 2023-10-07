@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,43 +54,52 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/">BetterWorld</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-  
-    <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="templates/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="event" class="nav-link">Events</a></li>
-        <!-- <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li> -->
-        <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-        <!-- <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li> -->
-        <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+   
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">BetterWorld</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-        {% if show_login_signup == "True" %}
-        <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
-        <li class="nav-item"><a href="signup" class="nav-link">SignUp</a></li>
-        {% else %}
-        {% if role == "org" %}
-        <li class="nav-item"><a href="/org/profile/{{email}}" class="nav-link">Profile</a></li>
-        <li class="nav-item"><a href="org_portal" class="nav-link">Admin Portal</a></li>
-        <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
-        {% else %}
-        <li class="nav-item"><a href="/user/profile/{{email}}" class="nav-link">Profile</a></li>
-        
-        <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
-        
-        {% endif %}
-  {% endif %}
-      </ul>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="templates/index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="event" class="nav-link">Events</a></li>
+          <!-- <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li> -->
+          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
+          <!-- <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li> -->
+          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+
+          {% if show_login_signup == "True" %}
+
+          <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="signup" class="nav-link">SignUp</a></li>
+          {% else %}
+          {% if role == "org" %}
+          <li class="nav-item"><a href="/org/profile/{{email}}" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="org_portal" class="nav-link">Admin Portal</a></li>
+          <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+          {% else %}
+          <li class="nav-item"><a href="petition" class="nav-link">Petition</a></li>
+          
+          <li class="nav-item"><a href="community" class="nav-link">Community</a></li>
+
+          <li class="nav-item"><a href="/user/profile/{{email}}" class="nav-link">Profile</a></li>
+          
+          <li class="nav-item"><a href="rewards" class="nav-link">Rewards</a></li>
+
+          <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+          
+          {% endif %}
+    {% endif %}
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
 <!-- END nav -->
     
     <div class="hero-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -108,35 +116,85 @@
 
     <section class="ftco-section">
       <div class="container">
-      <!-- <h3>Recommended For You</h3> -->
+      <h3>Recommended For You</h3> 
 <br>
 
-
 <!-- browse Categories -->
-<div class="container my-4">
-  <h1 class="text-center">Recommended For You</h1>
-  <div class="row my-4">
-    <!-- use for loop for iterating through Categories -->
-    {% for i in events %}
-      <div class="col-md-4 my-2">
-        <div class="card" style="width: fit-content;">
-          <img src="https://source.unsplash.com/500x400/?{{ cat }},coding" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><a href="threadslist.php?catid={{ id }}">{{ cat }}</a></h5>
-            <p class="card-text">{{ desc[:90] }}....</p>
-            <a href="threadslist.php?catid={{ id }}" class="btn btn-primary">View Threads</a>
+<div class="row mt-5">
+  {% set my_list = ['helping', 'child', 'climate', 'programming', 'cleaning', 'brooming'] %}
+  {% set counter = 0 %}
+
+  {% for event in events %}
+    {% set input_list = event[8] | string_to_list %}
+    {% if input_list | length > 0 %}
+      {% set final_image = input_list[0] %}
+
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry align-self-stretch">
+          <a href="/event/{{event[0]}}" class="block-20" style="background-image: url('{{event[10]}}');"></a>
+          <div class="text p-4 d-block">
+            <div class="meta mb-3">
+              <div><a href="#">{{ event[2] }}</a></div>
+              <div><a href="#">{{ event[1] }}</a></div>
+            </div>
+            <h3 class="heading mb-4"><a href="#">{{ event[3] }}</a></h3>
+            <p class="time-loc">
+              <span class="mr-2"><i class="icon-clock-o"></i> {{ event[4] }}</span>
+              <span><i class="icon-map-o"></i> {{ event[5] }}</span>
+            </p>
+            <p>{{ event[7] }}</p>
+            <p><a href="/event/{{event[0]}}">Join Event <i class="ion-ios-arrow-forward"></i></a></p>
           </div>
         </div>
       </div>
-    {% endfor %}
-  </div>
+
+      {% set counter = (counter + 1) % my_list|length %}
+
+    {% endif %}
+  {% endfor %}
 </div>
 
 
+<h3>All Events</h3> 
+<br>
 
+<!-- browse Categories -->
+<!-- browse Categories -->
+<div class="row mt-5">
+  {% set my_list = ['helping', 'child', 'climate', 'programming', 'cleaning', 'brooming'] %}
+  {% set counter = 0 %}
+
+  {% for event in events %}
+    {% set input_list = event[8] | string_to_list %}
+    {% if input_list | length > 0 %}
+      {% set final_image = input_list[0] %}
+
+      <div class="col-md-4 d-flex ftco-animate">
+        <div class="blog-entry align-self-stretch">
+          <a href="/events/{{event[0]}}" class="block-20" style="background-image: url({{event[10]}})"></a>
+          <div class="text p-4 d-block">
+            <div class="meta mb-3">
+              <div><a href="#">{{ event[2] }}</a></div>
+              <div><a href="#">{{ event[1] }}</a></div>
+            </div>
+            <h3 class="heading mb-4"><a href="#">{{ event[3] }}</a></h3>
+            <p class="time-loc">
+              <span class="mr-2"><i class="icon-clock-o"></i> {{ event[4] }}</span>
+              <span><i class="icon-map-o"></i> {{ event[5] }}</span>
+            </p>
+            <p>{{ event[7] }}</p>
+            <p><a href="{{ event.link }}">Join Event <i class="ion-ios-arrow-forward"></i></a></p>
+          </div>
+        </div>
       </div>
 
-  </div>
+      {% set counter = counter + 1 %}
+      {% if counter >= my_list|length %}
+        {% set counter = 0 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 
 
@@ -209,8 +267,8 @@
   
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+  <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+ -->
 
   <script src="static/js/jquery.min.js"></script>
   <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
